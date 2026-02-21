@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sneha A — AI/ML Portfolio
 
 A modern, production-grade portfolio website for an AI/ML and Generative AI practitioner. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
@@ -55,3 +56,6 @@ A modern, production-grade portfolio website for an AI/ML and Generative AI prac
 ## License
 
 Private — for personal portfolio use.
+=======
+# portfolio
+>>>>>>> 217e517084d4314527b70cc1cdef2bec3c9915bd
