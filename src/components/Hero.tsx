@@ -82,6 +82,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.name}
+                title={s.name}
                 className="p-3 rounded-xl border border-white/10 bg-white/5 text-slate-400 hover:text-indigo-400 hover:border-indigo-500/50 hover:shadow-glow-cyan transition-all duration-300"
               >
                 {Icon && <Icon className="w-5 h-5" />}

@@ -96,27 +96,36 @@ export const career = {
   internships: [
     {
       company: "Quantrail Data Pvt. Ltd.",
-      role: "AI/ML intern",
+      role: "AI/ML Intern",
       location: "Chennai",
-      period: "April 2025 - October 2025",
-      description:
-        "During my AI/ML internship at Quantrail Data Pvt. Ltd. from April 2025 to October 2025, I gained hands-on experience in developing and fine-tuning Large Language Models (LLMs) and generative AI solutions to derive insights from unstructured data. I also implemented AI-driven workflows and automated text generation tasks, which enhanced my understanding of how intelligent automation can optimize business processes and improve data-driven decision-making.",
+      period: "April 2025 – October 2025",
+      description: [
+        "Developed and fine-tuned Large Language Models (LLMs) and generative AI solutions to derive insights from unstructured data.",
+        "Implemented AI-driven workflows and automated text generation tasks, enhancing intelligent automation for business process optimization.",
+      ],
+      tags: ["LLMs", "Generative AI", "Fine-tuning", "Text Generation", "Unstructured Data"],
     },
     {
       company: "Main Flow Services and Technologies Pvt. Ltd.",
-      role: "Data Science with Python intern",
+      role: "Data Science with Python Intern",
       location: "Chennai",
-      period: "25 August 2024 - 25th October 2024",
-      description:
-        "During the Data Science with Python internship at Main Flow Services and Technologies Pvt. Ltd., Chennai, I got hands-on experience working with real-world datasets. I explored data analysis, machine learning algorithms, and Python libraries like pandas, NumPy, and Matplotlib. This experience helped me sharpen my problem-solving skills and understand how data-driven insights can make a real impact.",
+      period: "Aug 2024 – Oct 2024",
+      description: [
+        "Worked with real-world datasets, exploring data analysis, machine learning algorithms, and Python libraries like Pandas, NumPy, and Matplotlib.",
+        "Sharpened problem-solving skills and understood how data-driven insights can make a real impact on business decisions.",
+      ],
+      tags: ["Python", "Pandas", "NumPy", "Matplotlib", "Data Analysis", "ML Algorithms"],
     },
     {
-      company: "EduStation",
-      role: "Machine Learning Intern",
+      company: "ICTAcademy – Open Weaver",
+      role: "AI Engineering Intern",
       location: "Chennai",
-      period: "1 May 2023 – 1 July 2023",
-      description:
-        "During my Machine Learning Internship at EduStation, I got the opportunity to work on real-world projects, building and fine-tuning machine learning models. I worked on data preprocessing, model training, and evaluation, using Python and popular ML libraries. This experience strengthened my problem-solving skills and gave me hands-on exposure to AI and data-driven decision-making.",
+      period: "Sep 2023 – Oct 2023",
+      description: [
+        "Received comprehensive training in artificial intelligence covering both theoretical knowledge and practical skills.",
+        "Engaged in intensive modules covering machine learning, deep learning, and NLP, utilizing TensorFlow and PyTorch.",
+      ],
+      tags: ["Machine Learning", "Deep Learning", "NLP", "TensorFlow", "PyTorch"],
     },
   ],
 };

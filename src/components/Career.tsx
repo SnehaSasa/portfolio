@@ -25,6 +25,23 @@ export function Career() {
         </p>
       </motion.div>
 
+      {/* Full-time vs Internship labels */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="flex flex-wrap justify-center gap-3 mb-10"
+      >
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-sm font-medium">
+          <span className="w-2 h-2 rounded-full bg-indigo-400" />
+          Full-time
+        </span>
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-violet-500/20 border border-violet-500/30 text-violet-300 text-sm font-medium">
+          <span className="w-2 h-2 rounded-full bg-violet-400" />
+          Internships
+        </span>
+      </motion.div>
+
       <div className="max-w-3xl mx-auto relative">
         {/* Timeline line */}
         <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/50 via-indigo-500/30 to-transparent" />
@@ -50,6 +67,9 @@ export function Career() {
               onClick={() => setExpandedId(expandedId === "fulltime" ? null : "fulltime")}
             >
               <div>
+                <span className="inline-block px-2 py-0.5 rounded text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-2">
+                  Full-time
+                </span>
                 <h3 className="font-semibold text-white text-lg">
                   {career.fullTime.title}
                 </h3>
@@ -71,7 +91,7 @@ export function Career() {
                   <ul className="space-y-2 text-slate-300 text-sm mb-4">
                     {career.fullTime.description.map((d) => (
                       <li key={d.slice(0, 30)} className="flex gap-2">
-                        <span className="text-indigo-400 mt-1.5">•</span>
+                        <span className="text-indigo-400 mt-1.5 shrink-0">▸</span>
                         {d}
                       </li>
                     ))}
@@ -119,6 +139,9 @@ export function Career() {
                   onClick={() => setExpandedId(isOpen ? null : id)}
                 >
                   <div>
+                    <span className="inline-block px-2 py-0.5 rounded text-xs bg-violet-500/20 text-violet-300 border border-violet-500/30 mb-2">
+                      Internship
+                    </span>
                     <h3 className="font-semibold text-white">{intern.role}</h3>
                     <p className="text-violet-400 text-sm mt-0.5">{intern.company}</p>
                     <p className="text-slate-500 text-sm">{intern.location} · {intern.period}</p>
@@ -135,7 +158,33 @@ export function Career() {
                       exit={{ height: 0, opacity: 0 }}
                       className="px-5 pb-5"
                     >
-                      <p className="text-slate-300 text-sm">{intern.description}</p>
+                      <ul className="space-y-2 text-slate-300 text-sm mb-4">
+                        {Array.isArray(intern.description)
+                          ? intern.description.map((d) => (
+                              <li key={d.slice(0, 30)} className="flex gap-2">
+                                <span className="text-violet-400 mt-1.5 shrink-0">▸</span>
+                                {d}
+                              </li>
+                            ))
+                          : (
+                              <li className="flex gap-2">
+                                <span className="text-violet-400 mt-1.5 shrink-0">▸</span>
+                                {intern.description}
+                              </li>
+                            )}
+                      </ul>
+                      {Array.isArray(intern.tags) && intern.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                          {intern.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-2.5 py-1 rounded-lg text-xs bg-violet-500/20 text-violet-300 border border-violet-500/30"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
