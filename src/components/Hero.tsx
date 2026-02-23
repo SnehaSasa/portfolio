@@ -25,9 +25,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-3"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white mb-3 section-title-glow"
         >
-          <span className="gradient-text">{hero.name}</span>
+          <span className="hero-identity">{hero.name}</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -54,14 +54,14 @@ export function Hero() {
         >
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-blue-600 text-white font-medium btn-glow hover:shadow-glow-indigo transition-all duration-300 hover:scale-105"
+            className="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-xl"
           >
             View Projects
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 bg-white/5 text-slate-200 font-medium hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+            className="btn-ghost-glass inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium"
           >
             Get In Touch
           </a>
@@ -83,7 +83,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 aria-label={s.name}
                 title={s.name}
-                className="p-3 rounded-xl border border-white/10 bg-white/5 text-slate-400 hover:text-indigo-400 hover:border-indigo-500/50 hover:shadow-glow-cyan transition-all duration-300"
+                className="icon-glass p-3 rounded-xl"
               >
                 {Icon && <Icon className="w-5 h-5" />}
               </a>

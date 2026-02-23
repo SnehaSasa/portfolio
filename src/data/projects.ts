@@ -7,7 +7,8 @@ export interface Project {
   metrics?: string;
 }
 
-export const projects: Project[] = [
+/** AI/ML & Data Science projects */
+export const aiMlProjects: Project[] = [
   {
     id: -1,
     title: "Auto Apply Job Application System",
@@ -80,16 +81,31 @@ export const projects: Project[] = [
       "Utilized a dataset of 400 patient records, applying key metrics like accuracy, confusion matrix, and recall score to assess performance.",
     ],
     metrics: "99% accuracy · IEEE Publication",
+  }
+];
+
+/** Software Engineering projects */
+export const sweProjects: Project[] = [
+  {
+    id: 6,
+    title: "iBook Online Library Management System",
+    repoUrl: "https://github.com/SnehaSasa/iBook-System.git",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "PHP", "MySQL"],
+    description: [
+      "Developed an online library management system using HTML, CSS, JavaScript, Bootstrap, PHP, and MySQL. Implemented features for book search, issue tracking, and user reviews, improving library operational efficiency by 60%.",
+      "Streamlined book issue and return processes, offering an interactive user experience with a responsive interface, reducing manual management time and improving user satisfaction.",
+    ],
+    metrics: "60% efficiency gain · Responsive UI",
   },
   {
-    id: 5,
-    title: "Prediction of Diabetes",
-    repoUrl: "https://github.com/SnehaSasa/Diabetes-Prediction.git",
-    tech: ["Decision Tree", "NumPy", "Pandas", "Seaborn"],
+    id: 7,
+    title: "Weather App",
+    repoUrl: "https://github.com/SnehaSasa/Weather-App.git",
+    tech: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
     description: [
-      "Built a predictive model using Decision Tree to forecast diabetes risk based on a dataset of 769 patients. Achieved 77% accuracy with a focus on key features such as insulin, glucose levels, and BMI.",
-      "Enabled early identification of high-risk individuals, promoting preventive healthcare measures.",
+      "Created a real-time weather forecasting app using HTML, CSS, and JavaScript, integrated with OpenWeatherMap API to provide users with accurate weather data, including temperature, humidity, and precipitation chances.",
+      "Increased user engagement by providing timely and precise weather updates, improving the user experience and accessibility of weather data.",
     ],
-    metrics: "77% accuracy",
+    metrics: "Real-time · API integration",
   },
 ];

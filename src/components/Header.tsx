@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, FileDown } from "lucide-react";
-import { navLinks } from "@/data/content";
+import { navLinks, resumes } from "@/data/content";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -69,10 +69,10 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="https://drive.google.com/file/d/1moSchdgthZYu5o9gtKDwskHyhGtqmRpG/view?usp=drive_link"
+              href={resumes.aiml}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-violet-600 via-indigo-600 to-blue-600 text-white text-sm font-medium shadow-glow-violet hover:shadow-glow-indigo transition-all duration-300 hover:scale-105"
+              className="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm"
             >
               <FileDown className="w-4 h-4" />
               Resume
@@ -110,7 +110,7 @@ export function Header() {
                 </Link>
               ))}
               <a
-                href="https://drive.google.com/file/d/1moSchdgthZYu5o9gtKDwskHyhGtqmRpG/view?usp=drive_link"
+                href={resumes.aiml}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 py-3 mt-2 text-indigo-400 font-medium"

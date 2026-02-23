@@ -2,30 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========== Aurora Glass UI — Design System ========== */
+
 :root {
-  --bg-navy: #0a0e1a;
-  --bg-navy-mid: #0f1424;
-  --accent-violet: #8b5cf6;
-  --accent-indigo: #6366f1;
-  --accent-blue: #3b82f6;
-  --accent-cyan: #22d3ee;
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-bg: rgba(15, 20, 36, 0.6);
+  /* Slightly lighter Aurora background */
+  --aurora-bg-deep: #050a1a;
+  --aurora-bg-navy: #0f172a;
+  --aurora-indigo: #1e293b;
+  --aurora-violet: #312e81;
+  --aurora-cyan: rgba(34, 211, 238, 0.18);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-blur: 20px;
+
+  /* Glow */
+  --glow-violet: 0 0 40px rgba(139, 92, 246, 0.22);
+  --glow-cyan: 0 0 30px rgba(34, 211, 238, 0.2);
+  --glow-blue: 0 0 35px rgba(59, 130, 246, 0.2);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Aurora gradient background — deep navy/violet base, not flat */
 body {
-  background: linear-gradient(180deg, #0a0e1a 0%, #0f1424 30%, #151c30 60%, #0a0e1a 100%);
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(99, 102, 241, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 60% at 80% 50%, rgba(79, 70, 229, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 100% at 20% 80%, rgba(30, 41, 59, 0.4) 0%, transparent 50%),
+    var(--aurora-bg-deep);
+
   background-attachment: fixed;
   min-height: 100vh;
 }
 
-/* Gradient text utility */
+/* ========== Gradient typography ========== */
+/* Multi-color: violet → blue → cyan */
 .gradient-text {
-  background: linear-gradient(135deg, #a78bfa 0%, #818cf8 25%, #60a5fa 50%, #22d3ee 100%);
+  background: linear-gradient(90deg, #a78bfa 0%, #818cf8 35%, #60a5fa 65%, #22d3ee 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -33,19 +50,164 @@ body {
   animation: gradient-text-flow 6s ease infinite;
 }
 
+/* Accent word in section headings (white + gradient word) */
+.gradient-accent {
+  background: linear-gradient(90deg, #a78bfa 0%, #818cf8 40%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 @keyframes gradient-text-flow {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
 
-/* Primary button glow pulse */
+/* Hero: Animated gradient identity — brand focal point, slight shimmer */
+.hero-identity {
+  background: linear-gradient(90deg, #c4b5fd 0%, #a78bfa 25%, #60a5fa 60%, #22d3ee 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-text-flow 5s ease infinite;
+  filter: brightness(1.05);
+}
+
+/* ========== Section eyebrow / overline label ========== */
+.section-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgb(167 139 250);
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
+  margin-bottom: 0.5rem;
+}
+
+/* Section title: for headings that use accent word */
+.section-title {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+/* Subtle glow behind important headings */
+.section-title-glow {
+  text-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
+}
+
+/* Card title: brighter than body, hover glow */
+.card-title {
+  color: rgba(248, 250, 252, 0.95);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.card-title:hover {
+  color: rgb(103 232 249);
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+}
+
+
+/* ========== Metric highlight numbers (stats) — cyan/blue gradient ========== */
+.stat-number {
+  background: linear-gradient(90deg, #38bdf8 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* ========== Glass pills / tech badges ========== */
+.glass-pill {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  color: rgb(203 213 225);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.glass-pill:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: var(--glow-violet);
+}
+
+/* ========== Buttons ========== */
+/* Primary: gradient CTA — purple → pink → violet, glow underneath */
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 35%, #8b5cf6 100%);
+  color: white;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.45);
+  transform: scale(1.02);
+}
+
+/* Secondary: ghost glass */
+.btn-ghost-glass {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: rgb(226 232 240);
+  border-radius: 0.75rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-ghost-glass:hover {
+  background: var(--glass-bg);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ========== Icon glass buttons ========== */
+.icon-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  color: rgb(167 139 250);
+  transition: border-color 0.2s, box-shadow 0.2s, color 0.2s;
+}
+.icon-glass:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: var(--glow-violet);
+  color: rgb(34 211 238);
+}
+
+/* ========== Soft ambient glows (utility) ========== */
+.glow-soft-violet {
+  box-shadow: var(--glow-violet);
+}
+.glow-soft-cyan {
+  box-shadow: var(--glow-cyan);
+}
+.glow-soft-blue {
+  box-shadow: var(--glow-blue);
+}
+
+/* Legacy / compatibility */
 .btn-glow {
-  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 35px rgba(139, 92, 246, 0.35);
   animation: btn-glow-pulse 3s ease-in-out infinite;
 }
+
 @keyframes btn-glow-pulse {
-  0%, 100% { box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.5); }
-  50% { box-shadow: 0 0 50px -5px rgba(99, 102, 241, 0.6); }
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(139, 92, 246, 0.35);
+  }
+
+  50% {
+    box-shadow: 0 0 45px rgba(139, 92, 246, 0.4);
+  }
 }
 
 /* Glass card base */
@@ -58,10 +220,25 @@ body {
   @apply py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
 }
 
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
 /* Glow on focus for accessibility */
-*:focus-visible {
-  @apply outline-2 outline-offset-2 outline-indigo-500;
+    90deg,
+    transparent 0%,
+    rgba(139, 92, 246, 0.2) 20%,
+/* Reduce motion for users who prefer it */
+    rgba(99, 102, 241, 0.3) 50%,
+    rgba(139, 92, 246, 0.2) 80%,
+    transparent 100%
+  );
+  margin: 0 auto;
+  max-width: 640px;
 }
+
+/* *:focus-visible {
+  @apply outline-2 outline-offset-2 outline-indigo-500;
+} */
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
@@ -70,4 +247,102 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+
+/* ========== Glass Section Separators ========== */
+
+/* Vertical separator between adjacent cards */
+/* .glass-divider-vertical {
+  position: relative;
+} */
+
+/* .glass-divider-vertical::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  right: -12px; 
+  width: 1px;
+  height: 84%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.35) 25%,
+    rgba(79, 70, 229, 0.65) 50%,
+    rgba(99, 102, 241, 0.35) 75%,
+    transparent 100%
+  );
+  filter: blur(0.3px);
+  pointer-events: none;
+} */
+
+
+
+/* Horizontal separator */
+/* .glass-divider-horizontal {
+  position: relative;
+} */
+
+/* .glass-divider-horizontal::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  bottom: -1px;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 92, 246, 0.25) 30%,
+    rgba(99, 102, 241, 0.35) 50%,
+    rgba(139, 92, 246, 0.25) 70%,
+    transparent 100%
+  );
+  filter: blur(0.5px);
+} */
+
+/* Optional: subtle inner glow for grouped cards */
+/* .glass-group {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.glass-group::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 40px rgba(139, 92, 246, 0.05),
+    inset 0 0 20px rgba(34, 211, 238, 0.04);
+} */
+
+/* @media (max-width: 768px) {
+  .glass-divider-vertical::after {
+    display: none;
+  }
+} */
+
+
+.glass-group {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.015);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(12px);
+  position: relative;
+}
+
+.glass-group::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 60px rgba(139, 92, 246, 0.04),
+    inset 0 0 20px rgba(34, 211, 238, 0.03);
 }

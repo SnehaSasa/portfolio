@@ -11,9 +11,9 @@ export const hero = {
   greeting: "Hi, I'm",
   name: "Sneha Anguswamy",
   shortName: "Sneha A",
-  tagline: "AI/ML and Generative AI Practitioner · Data Scientist",
+  tagline: "Software Engineer . AI/ML & Generative AI Specialist",
   description:
-    "Building intelligent systems with LLMs, RAG pipelines, and deep learning. Passionate about turning complex AI research into scalable product solutions.",
+    "Building intelligent systems with LLMs, RAG pipelines, and deep learning. Passionate about turning complex AI research into scalable solutions.",
   social: [
     { name: "GitHub", href: "https://github.com/SnehaSasa", icon: "Github" },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/sneha-a-a51b30221", icon: "Linkedin" },
@@ -23,7 +23,7 @@ export const hero = {
 };
 
 export const about = {
-  bio: "I'm a passionate AI/ML Engineer & Generative AI Practitioner with a strong foundation in deep learning, NLP, and generative AI. Currently working at an AI-native service-based company as a Junior Data Scientist, I build intelligent systems that solve real-world problems. I'm now seeking opportunities to bring this expertise to product-driven AI teams solving meaningful problems at scale.",
+  bio: "I bring together strong software engineering fundamentals and deep AI/ML expertise to build intelligent, scalable systems for real-world applications and build interactive web applications. As a Junior Data Scientist at an AI-native company, I develop production-ready Generative AI solutions—including RAG pipelines, LLM integrations, and multi-agent architectures—while applying robust engineering practices such as clean architecture, deployment pipelines, and system design.",
   infoCards: [
     {
       title: "Education",
@@ -36,19 +36,19 @@ export const about = {
     },
     {
       title: "Specialization",
-      value: "LLMs, RAG, NLP & Generative AI",
+      value: "Software Engineering, Web Development, LLMs, RAG & Generative AI",
     },
   ],
   stats: [
     { value: "3+", label: "Internships" },
-    { value: "10+", label: "Projects" },
+    { value: "8", label: "Projects" },
     { value: "2", label: "Conferences" },
     { value: "3+", label: "Certifications" },
   ],
   workingOn: [
-    "CAWi — AI HR Policy Assistant",
-    "LLM Fine-tuning & RAG Systems",
-    "Agentic AI Workflows",
+    "Enterprise Conversational AI Platform (Full-Stack Web + Generative AI Architecture)",
+    "Production-Ready LLM & RAG Pipelines with Scalable Backend Systems",
+    "Multi-Agent Orchestration for Intelligent Workflows",
   ],
 };
 
@@ -89,9 +89,9 @@ export const career = {
     period: "June 2025 — Present",
     description: [
       "Gained hands-on experience in Generative AI by working directly with real-world implementations, including RAG pipelines, prompt engineering, multi-agent workflows, and LLM integrations, which helped me understand not just the theory but how GenAI systems are designed, deployed, and scaled in production.",
-      "Contributed extensively to CAWi, an enterprise conversational AI platform, by exploring and working across backend services, control/RBAC systems, data ingestion pipelines, and frontend integrations, developing a clear understanding of end-to-end architecture and how AI solutions support real business use cases.",
+      "Contributing extensively to a an enterprise conversational AI platform, by exploring and working across backend services, control/RBAC systems, data ingestion pipelines, and frontend integrations, developing a clear understanding of end-to-end architecture and how AI solutions support real business use cases.",
     ],
-    tags: ["GenAI", "RAG", "LLMs", "Prompt Engineering", "Multi-Agent", "CAWi"],
+    tags: ["GenAI", "RAG", "LLMs", "Prompt Engineering", "Multi-Agent"],
   },
   internships: [
     {
@@ -128,4 +128,10 @@ export const career = {
       tags: ["Machine Learning", "Deep Learning", "NLP", "TensorFlow", "PyTorch"],
     },
   ],
+};
+
+/** Resume links — replace swe URL when you have a separate Software Engineering resume */
+export const resumes = {
+  aiml: "https://drive.google.com/file/d/1moSchdgthZYu5o9gtKDwskHyhGtqmRpG/view?usp=drive_link",
+  swe: "https://drive.google.com/file/d/1moSchdgthZYu5o9gtKDwskHyhGtqmRpG/view?usp=drive_link",
 };

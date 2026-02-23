@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Github } from "lucide-react";
-import { projects } from "@/data/projects";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Github, Cpu, Code2 } from "lucide-react";
+import { aiMlProjects, sweProjects, type Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 const container = {
@@ -18,42 +19,22 @@ const cardItem = {
   show: { y: 0, opacity: 1 },
 };
 
-export function Projects() {
+function ProjectGrid({ projects }: { projects: Project[] }) {
   return (
-    <section id="projects" className="section-padding">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">
-          Featured Projects
-        </h2>
-        <p className="text-slate-400 max-w-xl mx-auto">
-          AI/ML and data science projects with measurable impact
-        </p>
-      </motion.div>
-
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-60px" }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
-        {projects.map((project) => (
-          <motion.article
-            key={project.id}
-            variants={cardItem}
-            className={cn(
-              "group rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10",
-              "bg-gradient-to-br from-white/5 to-white/[0.02]",
-              "hover:border-indigo-500/30 hover:shadow-glow-indigo/20 hover:-translate-y-1 transition-all duration-300"
-            )}
-          >
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      {projects.map((project) => (
+        <motion.article
+          key={project.id}
+          variants={cardItem}
+          className="glass-card group rounded-2xl overflow-hidden hover:border-violet-400/40 hover:shadow-[0_0_30px_rgba(139,92,246,0.25)] hover:-translate-y-1 transition-all duration-300"
+        >
             <div className="p-5 flex flex-col h-full">
-              <h3 className="font-semibold text-white text-lg mb-2 group-hover:text-indigo-300 transition-colors">
+              <h3 className="font-semibold card-title text-lg mb-2 group-hover:text-cyan-300">
                 {project.title}
               </h3>
               {project.metrics && (
@@ -63,7 +44,7 @@ export function Projects() {
                 {project.tech.slice(0, 5).map((t) => (
                   <span
                     key={t}
-                    className="px-2 py-0.5 rounded text-xs bg-white/5 border border-white/10 text-slate-400"
+                    className="glass-pill text-xs text-slate-400"
                   >
                     {t}
                   </span>
@@ -90,6 +71,81 @@ export function Projects() {
           </motion.article>
         ))}
       </motion.div>
+  );
+}
+
+export function Projects() {
+  const [activeTab, setActiveTab] = useState<"aiml" | "swe">("aiml");
+
+  return (
+    <section id="projects" className="section-padding">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        className="text-center mb-12"
+      >
+        {/* <span className="section-label">Featured Projects</span> */}
+        <h2 className="section-title mb-3 section-title-glow gradient-text">
+          Featured Projects
+        </h2>
+        <p className="text-slate-400 max-w-xl mx-auto mb-8">
+          AI/ML and software engineering projects with measurable impact
+        </p>
+
+        <div className="inline-flex flex-wrap justify-center gap-2 sm:gap-0 p-1 rounded-2xl glass-card border border-white/10 shadow-[0_0_20px_rgba(139,92,246,0.15)]">
+          <button
+            type="button"
+            onClick={() => setActiveTab("aiml")}
+            className={cn(
+              "inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300",
+              activeTab === "aiml"
+                ? "bg-indigo-500/30 text-white border border-indigo-500/50 shadow-[0_0_20px_rgba(99,102,241,0.25)] shadow-glow-indigo/20"
+                : "text-slate-400 hover:text-white hover:bg-white/5"
+            )}
+          >
+            <Cpu className="w-4 h-4" />
+            AI / ML Projects
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab("swe")}
+            className={cn(
+              "inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300",
+              activeTab === "swe"
+                ? "bg-indigo-500/30 text-white border border-indigo-500/50 shadow-glow-indigo/20"
+                : "text-slate-400 hover:text-white hover:bg-white/5"
+            )}
+          >
+            <Code2 className="w-4 h-4" />
+            Software Engineering Projects
+          </button>
+        </div>
+      </motion.div>
+
+      <AnimatePresence mode="wait">
+        {activeTab === "aiml" ? (
+          <motion.div
+            key="aiml"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}
+          >
+            <ProjectGrid projects={aiMlProjects} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="swe"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}
+          >
+            <ProjectGrid projects={sweProjects} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

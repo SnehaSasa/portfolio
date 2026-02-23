@@ -17,11 +17,12 @@ export function Career() {
         viewport={{ once: true, margin: "-80px" }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">
+        <span className="section-label">Work Experience</span>
+        <h2 className="section-title mb-3 section-title-glow gradient-text">
           Career Journey
         </h2>
-        <p className="text-slate-400 max-w-xl mx-auto">
-          Work experience and internships
+        <p className="text-slate-500 text-sm mt-2 max-w-lg mx-auto">
+          Emphasis on engineering systems, production deployments, and end-to-end architecture understanding.
         </p>
       </motion.div>
 
@@ -44,7 +45,7 @@ export function Career() {
 
       <div className="max-w-3xl mx-auto relative">
         {/* Timeline line */}
-        <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/50 via-indigo-500/30 to-transparent" />
+        <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/60 via-violet-500/40 to-transparent" />
 
         {/* Full-time role */}
         <motion.div
@@ -53,13 +54,9 @@ export function Career() {
           viewport={{ once: true }}
           className="relative pl-12 md:pl-16 pb-10"
         >
-          <div className="absolute left-0 top-1 w-3 h-3 rounded-full bg-indigo-500 ring-4 ring-navy-900" />
+          <div className="absolute left-0 top-1 w-3 h-3 rounded-full bg-indigo-500 ring-4 ring-navy-900 shadow-[0_0_12px_rgba(99,102,241,0.7)]" />
           <div
-            className={cn(
-              "rounded-2xl backdrop-blur-xl border overflow-hidden transition-all duration-300",
-              "bg-gradient-to-br from-white/5 to-white/[0.02] border-white/10",
-              "hover:border-indigo-500/30"
-            )}
+            className="glass-card group rounded-2xl overflow-hidden hover:border-violet-400/40 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(139,92,246,0.25)] transition-all duration-300"
           >
             <button
               type="button"
@@ -70,14 +67,14 @@ export function Career() {
                 <span className="inline-block px-2 py-0.5 rounded text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-2">
                   Full-time
                 </span>
-                <h3 className="font-semibold text-white text-lg">
+                <h3 className="font-semibold card-title text-lg">
                   {career.fullTime.title}
                 </h3>
                 <p className="text-indigo-400 text-sm mt-0.5">{career.fullTime.company}</p>
                 <p className="text-slate-500 text-sm">{career.fullTime.location} · {career.fullTime.period}</p>
               </div>
               <ChevronDown
-                className={cn("w-5 h-5 text-slate-400 shrink-0 transition-transform", expandedId === "fulltime" && "rotate-180")}
+                className={cn("w-5 h-5 text-violet-400 shrink-0 transition-transform group-hover:text-cyan-400", expandedId === "fulltime" && "rotate-180")}
               />
             </button>
             <AnimatePresence>
@@ -125,13 +122,9 @@ export function Career() {
               transition={{ delay: (i + 1) * 0.1 }}
               className="relative pl-12 md:pl-16 pb-10"
             >
-              <div className="absolute left-0 top-1 w-3 h-3 rounded-full bg-violet-500/80 ring-4 ring-navy-900" />
+              <div className="absolute left-0 top-1 w-3 h-3 rounded-full bg-violet-500/80 ring-4 ring-navy-900 shadow-[0_0_12px_rgba(139,92,246,0.7)]" />
               <div
-                className={cn(
-                  "rounded-2xl backdrop-blur-xl border overflow-hidden transition-all duration-300",
-                  "bg-gradient-to-br from-white/5 to-white/[0.02] border-white/10",
-                  "hover:border-violet-500/30"
-                )}
+                className="glass-card group rounded-2xl overflow-hidden hover:border-violet-400/40 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(139,92,246,0.25)] transition-all duration-300"
               >
                 <button
                   type="button"
@@ -142,12 +135,12 @@ export function Career() {
                     <span className="inline-block px-2 py-0.5 rounded text-xs bg-violet-500/20 text-violet-300 border border-violet-500/30 mb-2">
                       Internship
                     </span>
-                    <h3 className="font-semibold text-white">{intern.role}</h3>
+                    <h3 className="font-semibold card-title">{intern.role}</h3>
                     <p className="text-violet-400 text-sm mt-0.5">{intern.company}</p>
                     <p className="text-slate-500 text-sm">{intern.location} · {intern.period}</p>
                   </div>
                   <ChevronDown
-                    className={cn("w-5 h-5 text-slate-400 shrink-0 transition-transform", isOpen && "rotate-180")}
+                    className={cn("w-5 h-5 text-violet-400 shrink-0 transition-transform", isOpen && "rotate-180")}
                   />
                 </button>
                 <AnimatePresence>

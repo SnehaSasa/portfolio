@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sneha A | AI/ML & Generative AI Practitioner · Data Scientist",
+  title: "Sneha Anguswamy | AI/ML & Generative AI Practitioner · Data Scientist",
   description:
     "AI/ML Engineer & Generative AI Practitioner. Building intelligent systems with LLMs, RAG pipelines, and deep learning. Chennai, India.",
   keywords: [

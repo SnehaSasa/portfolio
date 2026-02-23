@@ -29,7 +29,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label={s.name}
                 title={s.name}
-                className="p-2 rounded-lg text-slate-500 hover:text-indigo-400 hover:bg-white/5 transition-colors"
+                className="icon-glass p-2 rounded-lg text-slate-400"
               >
                 {Icon && <Icon className="w-5 h-5" />}
               </a>

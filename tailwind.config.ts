@@ -13,18 +13,24 @@ const config: Config = {
         display: ["var(--font-inter)", "SF Pro Display", "system-ui", "sans-serif"],
       },
       colors: {
+        aurora: {
+          deep: "#020617",
+          navy: "#0b0f2a",
+          indigo: "#1e1b4b",
+          violet: "#312e81",
+        },
         navy: {
-          950: "#0a0e1a",
-          900: "#0f1424",
+          950: "#020617",
+          900: "#0b0f2a",
           800: "#151c30",
           700: "#1a2340",
           600: "#242d4a",
         },
         glow: {
-          violet: "rgba(139, 92, 246, 0.4)",
-          indigo: "rgba(99, 102, 241, 0.4)",
-          blue: "rgba(59, 130, 246, 0.35)",
-          cyan: "rgba(34, 211, 238, 0.3)",
+          violet: "rgba(139, 92, 246, 0.25)",
+          indigo: "rgba(99, 102, 241, 0.25)",
+          blue: "rgba(59, 130, 246, 0.22)",
+          cyan: "rgba(34, 211, 238, 0.22)",
         },
       },
       backgroundImage: {
@@ -35,11 +41,11 @@ const config: Config = {
         "gradient-button": "linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #2563eb 100%)",
       },
       boxShadow: {
-        "glow-violet": "0 0 40px -10px rgba(139, 92, 246, 0.5)",
-        "glow-indigo": "0 0 50px -15px rgba(99, 102, 241, 0.45)",
-        "glow-cyan": "0 0 30px -5px rgba(34, 211, 238, 0.35)",
-        "glass": "0 8px 32px rgba(0, 0, 0, 0.25)",
-        "glass-lg": "0 16px 48px rgba(0, 0, 0, 0.3)",
+        "glow-violet": "0 0 40px rgba(139, 92, 246, 0.22)",
+        "glow-indigo": "0 0 45px rgba(99, 102, 241, 0.22)",
+        "glow-cyan": "0 0 30px rgba(34, 211, 238, 0.2)",
+        "glass": "0 8px 32px rgba(0, 0, 0, 0.2)",
+        "glass-lg": "0 16px 48px rgba(0, 0, 0, 0.25)",
       },
       animation: {
         "float": "float 20s ease-in-out infinite",
