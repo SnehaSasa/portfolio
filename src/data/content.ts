@@ -132,6 +132,6 @@ export const career = {
 
 /** Resume links — replace swe URL when you have a separate Software Engineering resume */
 export const resumes = {
-  aiml: "https://drive.google.com/file/d/1moSchdgthZYu5o9gtKDwskHyhGtqmRpG/view?usp=drive_link",
-  swe: "https://drive.google.com/file/d/1moSchdgthZYu5o9gtKDwskHyhGtqmRpG/view?usp=drive_link",
+  aiml: "https://drive.google.com/file/d/1GmKrWmg8HNxQZ6ilqd3fVr4bO2LS08tv/view?usp=sharing"
+  // swe: "https://drive.google.com/file/d/1moSchdgthZYu5o9gtKDwskHyhGtqmRpG/view?usp=drive_link",
 };
