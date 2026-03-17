@@ -89,7 +89,7 @@ export const sweProjects: Project[] = [
   {
     id: 6,
     title: "E-Mart — Full-Stack E-Commerce Platform",
-    metrics: "50+ products · Real-time inventory · Redis caching",
+    repoUrl: "https://github.com/SnehaSasa/EMart.git",
     tech: ["FastAPI", "MySQL", "Redis", "Docker", "SQLAlchemy", "JavaScript"],
     description: [
       "Built a full-stack e-commerce platform with categorized product browsing and cart management",
@@ -98,7 +98,7 @@ export const sweProjects: Project[] = [
       "Integrated Redis caching to improve API response performance",
       "Containerized the backend infrastructure with Docker support, enabling reproducible development environments and simplified deployment.",
     ],
-    repoUrl: "https://github.com/SnehaSasa/EMart.git"
+    metrics: "50+ products · Real-time inventory · Redis caching",
   },
   {
     id: 7,
