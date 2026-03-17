@@ -41,7 +41,7 @@ function ProjectGrid({ projects }: { projects: Project[] }) {
                 <p className="text-xs text-indigo-400 mb-3">{project.metrics}</p>
               )}
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.slice(0, 5).map((t) => (
+                {project.tech.map((t) => (
                   <span
                     key={t}
                     className="glass-pill text-xs text-slate-400"

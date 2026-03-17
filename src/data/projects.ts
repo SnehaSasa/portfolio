@@ -90,7 +90,7 @@ export const sweProjects: Project[] = [
     id: 6,
     title: "E-Mart — Full-Stack E-Commerce Platform",
     repoUrl: "https://github.com/SnehaSasa/EMart.git",
-    tech: ["HTML", "CSS","FastAPI", "MySQL", "Redis", "Docker", "SQLAlchemy", "JavaScript"],
+    tech: ["HTML", "CSS","FastAPI", "MySQL", "Redis", "Docker", "JavaScript"],
     description: [
       "Built a full-stack e-commerce platform with categorized product browsing and cart management",
       "Implemented FastAPI backend with modular architecture for products, cart, and orders",
