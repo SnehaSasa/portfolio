@@ -88,6 +88,20 @@ export const aiMlProjects: Project[] = [
 export const sweProjects: Project[] = [
   {
     id: 6,
+    title: "E-Mart — Full-Stack E-Commerce Platform",
+    metrics: "50+ products · Real-time inventory · Redis caching",
+    tech: ["FastAPI", "MySQL", "Redis", "Docker", "SQLAlchemy", "JavaScript"],
+    description: [
+      "Built a full-stack e-commerce platform with categorized product browsing and cart management",
+      "Implemented FastAPI backend with modular architecture for products, cart, and orders",
+      "Engineered real-time inventory validation to prevent overselling",
+      "Integrated Redis caching to improve API response performance",
+      "Containerized the backend infrastructure with Docker support, enabling reproducible development environments and simplified deployment.",
+    ],
+    repoUrl: "https://github.com/SnehaSasa/EMart.git"
+  },
+  {
+    id: 7,
     title: "iBook Online Library Management System",
     repoUrl: "https://github.com/SnehaSasa/iBook-System.git",
     tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "PHP", "MySQL"],
@@ -98,7 +112,7 @@ export const sweProjects: Project[] = [
     metrics: "60% efficiency gain · Responsive UI",
   },
   {
-    id: 7,
+    id: 8,
     title: "Weather App",
     repoUrl: "https://github.com/SnehaSasa/Weather-App.git",
     tech: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
