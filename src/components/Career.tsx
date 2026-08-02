@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { career } from "@/data/content";
@@ -102,6 +103,15 @@ export function Career() {
                         {tag}
                       </span>
                     ))}
+                  </div>
+                  <div className="mt-5 pt-4 border-t border-white/5 flex justify-start">
+                    <Link
+                      href="/enterprise-ai-platform"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-400 hover:text-cyan-400 transition-colors group/link"
+                    >
+                      Explore my work on the product
+                      <span className="inline-block transition-transform group-hover/link:translate-x-1">→</span>
+                    </Link>
                   </div>
                 </motion.div>
               )}

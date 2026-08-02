@@ -2,20 +2,36 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, FileDown } from "lucide-react";
 import { navLinks, resumes } from "@/data/content";
 import { cn } from "@/lib/utils";
 
 export function Header() {
+  const pathname = usePathname();
+  const isCaseStudyPage = pathname === "/enterprise-ai-platform";
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
+    if (isCaseStudyPage) {
+      setActiveSection("enterprise-ai-platform");
+      const onScroll = () => {
+        setIsScrolled(window.scrollY > 40);
+      };
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+      return () => window.removeEventListener("scroll", onScroll);
+    }
+
     const onScroll = () => {
       setIsScrolled(window.scrollY > 40);
-      const sections = navLinks.map((l) => l.href.slice(1));
+      const sections = navLinks
+        .filter((l) => l.href.startsWith("#"))
+        .map((l) => l.href.slice(1));
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
         if (el && el.getBoundingClientRect().top <= 120) {
@@ -27,7 +43,7 @@ export function Header() {
     window.addEventListener("scroll", onScroll);
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isCaseStudyPage]);
 
   return (
     <motion.header
@@ -44,27 +60,34 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-18">
           <Link
-            href="#"
+            href={isCaseStudyPage ? "/" : "#"}
             className="text-xl font-display font-semibold text-white hover:text-indigo-300 transition-colors"
           >
             Sneha A
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "text-sm font-medium transition-colors",
-                  activeSection === link.href.slice(1)
-                    ? "text-indigo-400"
-                    : "text-slate-400 hover:text-white"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isHash = link.href.startsWith("#");
+              const href = isHash && isCaseStudyPage ? `/${link.href}` : link.href;
+              const isActive = isCaseStudyPage
+                ? link.href === "/enterprise-ai-platform"
+                : activeSection === link.href.slice(1);
+              return (
+                <Link
+                  key={link.href}
+                  href={href}
+                  className={cn(
+                    "text-sm font-medium transition-colors",
+                    isActive
+                      ? "text-indigo-400 font-semibold"
+                      : "text-slate-400 hover:text-white"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
@@ -99,16 +122,28 @@ export function Header() {
             className="md:hidden bg-navy-900/95 backdrop-blur-xl border-t border-white/5"
           >
             <div className="px-4 py-4 space-y-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block py-2 text-slate-300 hover:text-white"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isHash = link.href.startsWith("#");
+                const href = isHash && isCaseStudyPage ? `/${link.href}` : link.href;
+                const isActive = isCaseStudyPage
+                  ? link.href === "/enterprise-ai-platform"
+                  : activeSection === link.href.slice(1);
+                return (
+                  <Link
+                    key={link.href}
+                    href={href}
+                    className={cn(
+                      "block py-2 text-sm font-medium transition-colors",
+                      isActive
+                        ? "text-indigo-400 font-semibold"
+                        : "text-slate-300 hover:text-white"
+                    )}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <a
                 href={resumes.aiml}
                 target="_blank"

@@ -4,6 +4,7 @@ export const navLinks = [
   { href: "#career", label: "Career" },
   { href: "#projects", label: "Projects" },
   { href: "#research", label: "Research" },
+  { href: "/enterprise-ai-platform", label: "Enterprise AI Platform" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -23,7 +24,7 @@ export const hero = {
 };
 
 export const about = {
-  bio: "I bring together strong software engineering fundamentals and deep AI/ML expertise to build intelligent, scalable systems for real-world applications and build interactive web applications. As a Junior Data Scientist at an AI-native company, I develop production-ready Generative AI solutions—including RAG pipelines, LLM integrations, and multi-agent architectures—while applying robust engineering practices such as clean architecture, deployment pipelines, and system design.",
+  bio: "I bring together strong software engineering fundamentals and deep AI/ML expertise to build intelligent, scalable systems for real-world applications and build interactive web applications. I develop production-ready Generative AI solutions—including RAG pipelines, LLM integrations, and multi-agent architectures—while applying robust engineering practices such as clean architecture, deployment pipelines, and system design.",
   infoCards: [
     {
       title: "Education",
@@ -32,7 +33,7 @@ export const about = {
     { title: "Location", value: "Chennai, India" },
     {
       title: "Employment",
-      value: "Junior Data Scientist @ AI-Native Service-Based Company",
+      value: "Junior Data Scientist @ Aziro Technologies",
     },
     {
       title: "Specialization",
@@ -56,7 +57,7 @@ export const expertiseCategories = [
   {
     title: "AI & Generative AI",
     items:
-      "Machine Learning, Deep Learning, NLP, Generative AI, Computer Vision, LLMs, RAG, Agentic AI, AI Agents, Multi-Agents, LangChain, LangGraph, MCP, Vector Databases",
+      "Machine Learning, Deep Learning, NLP, Generative AI, Computer Vision, LLMs, RAG, Agentic AI, AI Agents, Multi-Agent Systems, LangChain, LangGraph, MCP, Vector Databases",
   },
   {
     title: "Python & ML Libraries",
@@ -64,27 +65,27 @@ export const expertiseCategories = [
       "NumPy, Pandas, Matplotlib, Scikit-Learn, Seaborn, OpenPyXL, TensorFlow, PyTorch, Hugging Face, OpenCV, YOLOv8, EasyOCR, Hydra",
   },
   {
-    title: "Programming Languages",
-    items: "Python, Java, C, R",
+    title: "Programming Languages & Databases",
+    items: "Python, Java, C, R, MySQL, SQLite, MongoDB, Postgres, SQL Server, NoSQL",
   },
   {
     title: "Web & Frameworks",
     items: "HTML, CSS, JavaScript, ReactJS, Redux, Bootstrap, Django, Flask, FastAPI, REST APIs",
   },
   {
-    title: "Databases & Cloud",
-    items: "MySQL, SQLite, MongoDB, SQL Server, NoSQL, Microsoft Azure, AWS",
+    title: "DevOps & Cloud",
+    items: "Docker, Containerization, Microsoft Azure, AWS",
   },
   {
     title: "CS Fundamentals & Tools",
-    items: "OOP, Data Structures, System Design, Git, GitHub, Docker, Streamlit, Jupyter, VS Code",
+    items: "OOPS, Data Structures, System Design, Git, GitHub, Streamlit, Jupyter, VS Code",
   },
 ];
 
 export const career = {
   fullTime: {
     title: "Junior Data Scientist",
-    company: "AI-native service-based company",
+    company: "Aziro Technologies",
     location: "Chennai",
     period: "June 2025 — Present",
     description: [
@@ -132,6 +133,6 @@ export const career = {
 
 /** Resume links — replace swe URL when you have a separate Software Engineering resume */
 export const resumes = {
-  aiml: "https://drive.google.com/file/d/1GmKrWmg8HNxQZ6ilqd3fVr4bO2LS08tv/view?usp=sharing"
+  aiml: "https://drive.google.com/file/d/1DaSQ7RvbOfgKZVqJsqbmBZoOpTLilMzw/view?usp=sharing"
   // swe: "https://drive.google.com/file/d/1moSchdgthZYu5o9gtKDwskHyhGtqmRpG/view?usp=drive_link",
 };
