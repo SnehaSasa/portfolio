@@ -4,7 +4,7 @@ export const navLinks = [
   { href: "#career", label: "Career" },
   { href: "#projects", label: "Projects" },
   { href: "#research", label: "Research" },
-  { href: "/enterprise-ai-platform", label: "Enterprise AI Platform" },
+  { href: "/enterprise-ai-platform", label: "CAWi" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -12,9 +12,9 @@ export const hero = {
   greeting: "Hi, I'm",
   name: "Sneha Anguswamy",
   shortName: "Sneha A",
-  tagline: "Software Engineer . AI/ML & Generative AI Specialist",
+  tagline: "AI Engineer | Generative AI & Agentic AI Specialist",
   description:
-    "Building intelligent systems with LLMs, RAG pipelines, and deep learning. Passionate about turning complex AI research into scalable solutions.",
+    "I engineer production-grade GenAI systems—from intelligent multi-agent architectures to retrieval, reasoning, and end-to-end AI pipelines.",
   social: [
     { name: "GitHub", href: "https://github.com/SnehaSasa", icon: "Github" },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/sneha-a-a51b30221", icon: "Linkedin" },
@@ -24,20 +24,20 @@ export const hero = {
 };
 
 export const about = {
-  bio: "I bring together strong software engineering fundamentals and deep AI/ML expertise to build intelligent, scalable systems for real-world applications and build interactive web applications. I develop production-ready Generative AI solutions—including RAG pipelines, LLM integrations, and multi-agent architectures—while applying robust engineering practices such as clean architecture, deployment pipelines, and system design.",
+  bio: "I'm an AI Engineer working at the intersection of Generative AI, intelligent agent systems, and backend engineering. I have had experience working on CAWi, an enterprise multi-agent platform that enables employees to interact with internal systems through natural language. My work spans the planner-executor reasoning layer, semantic tool routing, authentication, resilience infrastructure, and the engineering loops and evaluation harnesses that support reliable agent behavior—helping build AI systems that are robust and production-ready.",
   infoCards: [
     {
       title: "Education",
       value: "B.E. Computer Science & Engineering — St. Joseph's College of Engineering",
     },
-    { title: "Location", value: "Chennai, India" },
+    { title: "Experience", value: "2 Years" },
     {
       title: "Employment",
-      value: "Junior Data Scientist @ Aziro Technologies",
+      value: "Data Scientist @ Aziro Technologies",
     },
     {
       title: "Specialization",
-      value: "Software Engineering, Web Development, LLMs, RAG & Generative AI",
+      value: "Agentic AI, LLMs, RAG, Multi-Agent Systems & Backend Engineering",
     },
   ],
   stats: [
@@ -47,7 +47,7 @@ export const about = {
     { value: "3+", label: "Certifications" },
   ],
   workingOn: [
-    "Enterprise Conversational AI Platform (Full-Stack Web + Generative AI Architecture)",
+    "CAWi — Enterprise Conversational AI Platform (Full-Stack Web + GenAI Architecture)",
     "Production-Ready LLM & RAG Pipelines with Scalable Backend Systems",
     "Multi-Agent Orchestration for Intelligent Workflows",
   ],
@@ -55,44 +55,44 @@ export const about = {
 
 export const expertiseCategories = [
   {
-    title: "AI & Generative AI",
+    title: "AI, GenAI & Agentic Systems",
     items:
-      "Machine Learning, Deep Learning, NLP, Generative AI, Computer Vision, LLMs, RAG, Agentic AI, AI Agents, Multi-Agent Systems, LangChain, LangGraph, MCP, Vector Databases",
+      "Generative AI, Large Language Models (LLMs), RAG, Agentic AI, AI Agents, Multi-Agent Systems, NLP, Deep Learning, Computer Vision, LangChain, LangGraph, LangSmith, Langfuse, Langflow, MCP, Vector Databases",
   },
   {
-    title: "Python & ML Libraries",
+    title: "Machine Learning & AI Libraries",
     items:
-      "NumPy, Pandas, Matplotlib, Scikit-Learn, Seaborn, OpenPyXL, TensorFlow, PyTorch, Hugging Face, OpenCV, YOLOv8, EasyOCR, Hydra",
+      "Python, PyTorch, TensorFlow, Scikit-learn, Hugging Face, OpenCV, YOLOv8, EasyOCR, NumPy, Pandas, Matplotlib, Hydra",
   },
   {
-    title: "Programming Languages & Databases",
-    items: "Python, Java, C, R, MySQL, SQLite, MongoDB, Postgres, SQL Server, NoSQL",
+    title: "Backend & Application Engineering",
+    items: "FastAPI, Flask, Django, REST APIs, React, JavaScript, HTML, CSS",
   },
   {
-    title: "Web & Frameworks",
-    items: "HTML, CSS, JavaScript, ReactJS, Redux, Bootstrap, Django, Flask, FastAPI, REST APIs",
+    title: "Programming & Databases",
+    items: "Python, Java, C, SQL, PostgreSQL, MySQL, SQL Server, SQLite, MongoDB, NoSQL",
   },
   {
-    title: "DevOps & Cloud",
-    items: "Docker, Containerization, Microsoft Azure, AWS",
+    title: "Cloud & DevOps",
+    items: "Docker, Containerization, Microsoft Azure, AWS, Git, GitHub",
   },
   {
-    title: "CS Fundamentals & Tools",
-    items: "OOPS, Data Structures, System Design, Git, GitHub, Streamlit, Jupyter, VS Code",
+    title: "Computer Science Foundations",
+    items: "Data Structures & Algorithms, Object-Oriented Programming, System Design",
   },
 ];
 
 export const career = {
   fullTime: {
-    title: "Junior Data Scientist",
+    title: "Data Scientist (GenAI & Agentic Systems)",
     company: "Aziro Technologies",
     location: "Chennai",
     period: "June 2025 — Present",
     description: [
-      "Gained hands-on experience in Generative AI by working directly with real-world implementations, including RAG pipelines, prompt engineering, multi-agent workflows, and LLM integrations, which helped me understand not just the theory but how GenAI systems are designed, deployed, and scaled in production.",
-      "Contributing extensively to a an enterprise conversational AI platform, by exploring and working across backend services, control/RBAC systems, data ingestion pipelines, and frontend integrations, developing a clear understanding of end-to-end architecture and how AI solutions support real business use cases.",
+      "Built and shipped GenAI features in production — RAG pipelines, prompt engineering, multi-agent workflows, and LLM integrations for real enterprise use cases.",
+      "Contributing extensively to CAWi, an enterprise conversational AI platform, across backend services, control/RBAC systems, data ingestion pipelines, and frontend integrations — with clear ownership of end-to-end architecture.",
     ],
-    tags: ["GenAI", "RAG", "LLMs", "Prompt Engineering", "Multi-Agent"],
+    tags: ["GenAI", "RAG", "LLMs", "Agentic AI", "Multi-Agent", "Deployment"],
   },
   internships: [
     {
@@ -133,6 +133,6 @@ export const career = {
 
 /** Resume links — replace swe URL when you have a separate Software Engineering resume */
 export const resumes = {
-  aiml: "https://drive.google.com/file/d/1DaSQ7RvbOfgKZVqJsqbmBZoOpTLilMzw/view?usp=sharing"
+  aiml: "https://drive.google.com/file/d/1DaSQ7RvbOfgKZVqJsqbmBZoOpTLilMzw/view?usp=sharing",
   // swe: "https://drive.google.com/file/d/1moSchdgthZYu5o9gtKDwskHyhGtqmRpG/view?usp=drive_link",
 };

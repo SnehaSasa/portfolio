@@ -22,7 +22,7 @@ export function Contact() {
           Let&apos;s Connect
         </h2>
         <p className="text-slate-400 max-w-xl mx-auto">
-          Open to AI roles and collaborations
+          Open to AI Engineer, GenAI, and Agentic AI roles
         </p>
       </motion.div>
 

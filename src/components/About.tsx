@@ -1,13 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, MapPin, Briefcase, Sparkles } from "lucide-react";
+import { GraduationCap, Briefcase, Sparkles, Clock } from "lucide-react";
 import { about } from "@/data/content";
-import { cn } from "@/lib/utils";
 
 const iconMap = {
   Education: GraduationCap,
-  Location: MapPin,
+  Experience: Clock,
   Employment: Briefcase,
   Specialization: Sparkles,
 };
@@ -92,7 +91,7 @@ export function About() {
         ))}
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -107,7 +106,7 @@ export function About() {
             </li>
           ))}
         </ul>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

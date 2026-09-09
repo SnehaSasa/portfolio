@@ -1,6 +1,7 @@
 import { FloatingBlobs } from "@/components/FloatingBlobs";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { FlagshipCAWi } from "@/components/FlagshipCAWi";
 import { About } from "@/components/About";
 import { SectionDivider } from "@/components/SectionDivider";
 import { Expertise } from "@/components/Expertise";
@@ -18,6 +19,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <SectionDivider />
+        <FlagshipCAWi />
         <SectionDivider />
         <About />
         <SectionDivider />

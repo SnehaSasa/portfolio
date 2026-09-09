@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Cpu, Code2 } from "lucide-react";
+import { Github, Cpu, Code2, ArrowRight } from "lucide-react";
 import { aiMlProjects, sweProjects, type Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
@@ -33,31 +34,42 @@ function ProjectGrid({ projects }: { projects: Project[] }) {
           variants={cardItem}
           className="glass-card group rounded-2xl overflow-hidden hover:border-violet-400/40 hover:shadow-[0_0_30px_rgba(139,92,246,0.25)] hover:-translate-y-1 transition-all duration-300"
         >
-            <div className="p-5 flex flex-col h-full">
-              <h3 className="font-semibold card-title text-lg mb-2 group-hover:text-cyan-300">
-                {project.title}
-              </h3>
-              {project.metrics && (
-                <p className="text-xs text-indigo-400 mb-3">{project.metrics}</p>
-              )}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="glass-pill text-xs text-slate-400"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <ul className="space-y-1.5 text-slate-400 text-sm flex-1 mb-4">
-                {project.description.map((d) => (
-                  <li key={d.slice(0, 40)} className="flex gap-2">
-                    <span className="text-indigo-400 shrink-0">•</span>
-                    {d}
-                  </li>
-                ))}
-              </ul>
+          <div className="p-5 flex flex-col h-full">
+            {project.isCaseStudy && (
+              <span className="inline-block self-start px-2 py-0.5 mb-2 rounded text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                Flagship · Case Study
+              </span>
+            )}
+            <h3 className="font-semibold card-title text-lg mb-2 group-hover:text-cyan-300">
+              {project.title}
+            </h3>
+            {project.metrics && (
+              <p className="text-xs text-indigo-400 mb-3">{project.metrics}</p>
+            )}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tech.map((t) => (
+                <span key={t} className="glass-pill text-xs text-slate-400">
+                  {t}
+                </span>
+              ))}
+            </div>
+            <ul className="space-y-1.5 text-slate-400 text-sm flex-1 mb-4">
+              {project.description.map((d) => (
+                <li key={d.slice(0, 40)} className="flex gap-2">
+                  <span className="text-indigo-400 shrink-0">•</span>
+                  {d}
+                </li>
+              ))}
+            </ul>
+            {project.isCaseStudy && project.caseStudyHref ? (
+              <Link
+                href={project.caseStudyHref}
+                className="inline-flex items-center gap-2 text-sm text-indigo-400 hover:text-cyan-300 font-medium"
+              >
+                Read full case study
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            ) : (
               <a
                 href={project.repoUrl}
                 target="_blank"
@@ -67,10 +79,11 @@ function ProjectGrid({ projects }: { projects: Project[] }) {
                 <Github className="w-4 h-4" />
                 View on GitHub
               </a>
-            </div>
-          </motion.article>
-        ))}
-      </motion.div>
+            )}
+          </div>
+        </motion.article>
+      ))}
+    </motion.div>
   );
 }
 
@@ -85,7 +98,6 @@ export function Projects() {
         viewport={{ once: true, margin: "-80px" }}
         className="text-center mb-12"
       >
-        {/* <span className="section-label">Featured Projects</span> */}
         <h2 className="section-title mb-3 section-title-glow gradient-text">
           Featured Projects
         </h2>

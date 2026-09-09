@@ -10,22 +10,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sneha Anguswamy | AI/ML & Generative AI Practitioner · Data Scientist",
+  title: "Sneha Anguswamy | AI Engineer · Generative AI & Agentic AI",
   description:
-    "AI/ML Engineer & Generative AI Practitioner. Building intelligent systems with LLMs, RAG pipelines, and deep learning. Chennai, India.",
+    "AI Engineer specializing in Generative AI and Agentic AI. Building CAWi — an enterprise multi-agent platform — plus RAG pipelines and LLM tool-orchestration. Chennai, India.",
   keywords: [
-    "AI",
-    "Machine Learning",
+    "AI Engineer",
     "Generative AI",
+    "Agentic AI",
     "LLM",
     "RAG",
-    "Data Science",
-    "NLP",
+    "LangGraph",
+    "MCP",
+    "Multi-Agent",
     "Sneha Anguswamy",
   ],
   openGraph: {
-    title: "Sneha A | AI/ML & Generative AI Practitioner",
-    description: "Building intelligent systems with LLMs, RAG pipelines, and deep learning.",
+    title: "Sneha A | AI Engineer · Generative AI & Agentic AI",
+    description:
+      "Production GenAI systems — multi-agent orchestration, RAG, and LLM tool-routing. Flagship: CAWi enterprise platform.",
   },
 };
 

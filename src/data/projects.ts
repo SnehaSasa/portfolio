@@ -5,10 +5,27 @@ export interface Project {
   tech: string[];
   description: string[];
   metrics?: string;
+  isCaseStudy?: boolean;
+  caseStudyHref?: string;
 }
 
 /** AI/ML & Data Science projects */
 export const aiMlProjects: Project[] = [
+  // {
+  //   id: 100,
+  //   title: "CAWi — Enterprise Multi-Agent AI Platform",
+  //   repoUrl: "/enterprise-ai-platform",
+  //   tech: ["LangGraph", "MCP", "LLMs", "RAG", "Multi-Agent", "FastAPI", "Azure"],
+  //   description: [
+  //     "Enterprise conversational AI platform that enables employees to query and interact with internal systems through natural language, using MCP-based integrations such as GitHub, Outlook, and other enterprise tools within a planner–executor multi-agent architecture.",
+  //     "Engineered core AI and platform components, including the planner–executor reasoning layer, semantic tool routing, Entra ID authentication, human-in-the-loop approval gates, and resilience patterns such as circuit breakers.",
+  //     "Built reliability and evaluation workflows around agent behavior, applying agent-loop and harness engineering practices to test, trace, evaluate, and improve multi-agent execution.",
+  //     "Implemented observability across agent workflows, tracing execution flows and monitoring system behavior using LangSmith and Langflow.",
+  //   ],
+  //   metrics: "Flagship · Production · Agentic AI",
+  //   isCaseStudy: true,
+  //   caseStudyHref: "/enterprise-ai-platform",
+  // },
   {
     id: -1,
     title: "Auto Apply Job Application System",
@@ -16,9 +33,7 @@ export const aiMlProjects: Project[] = [
     tech: ["Python", "FastAPI", "NLP", "sentence-transformers", "Chrome Extension", "JavaScript"],
     description: [
       "Built a GenAI-powered form understanding system using SentenceTransformer embeddings and semantic similarity, achieving 94% accuracy in mapping job portals' unstructured fields to candidate data.",
-      "Developed a full-stack Chrome extension that intelligently auto-fills job application forms using field detection, pattern matching, and dynamic DOM traversal, improving fill accuracy by 80%.",
-      "Integrated a Python FastAPI backend for resume storage and PDF serving, enabling secure file upload automation with zero user interaction.",
-      "Engineered a self-learning knowledge base for storing candidate details, roles, skills, and resumes, enabling intelligent autofill with 500ms real-time inference latency.",
+      "Developed a full-stack Chrome extension that auto-fills job application forms using dynamic DOM traversal, improving fill accuracy by 80%.",
       "Developed a resume recommender and uploader, leveraging embedding-based matching to fetch the best-suited PDF automatically with 98% selection accuracy.",
       "Automated multi-element input handling (text, dropdowns, radio, file inputs), improving end-to-end application speed by 5×.",
     ],
@@ -81,7 +96,7 @@ export const aiMlProjects: Project[] = [
       "Utilized a dataset of 400 patient records, applying key metrics like accuracy, confusion matrix, and recall score to assess performance.",
     ],
     metrics: "99% accuracy · IEEE Publication",
-  }
+  },
 ];
 
 /** Software Engineering projects */
@@ -90,7 +105,7 @@ export const sweProjects: Project[] = [
     id: 6,
     title: "E-Mart — Full-Stack E-Commerce Platform",
     repoUrl: "https://github.com/SnehaSasa/EMart.git",
-    tech: ["HTML", "CSS","FastAPI", "MySQL", "Redis", "Docker", "JavaScript"],
+    tech: ["HTML", "CSS", "FastAPI", "MySQL", "Redis", "Docker", "JavaScript"],
     description: [
       "Built a full-stack e-commerce platform with categorized product browsing and cart management",
       "Implemented FastAPI backend with modular architecture for products, cart, and orders",
@@ -106,10 +121,10 @@ export const sweProjects: Project[] = [
     repoUrl: "https://github.com/SnehaSasa/iBook-System.git",
     tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "PHP", "MySQL"],
     description: [
-      "Developed an online library management system using HTML, CSS, JavaScript, Bootstrap, PHP, and MySQL. Implemented features for book search, issue tracking, and user reviews, improving library operational efficiency by 60%.",
-      "Streamlined book issue and return processes, offering an interactive user experience with a responsive interface, reducing manual management time and improving user satisfaction.",
+      "Developed an online library management system using HTML, CSS, JavaScript, Bootstrap, PHP, and MySQL with book search, issue tracking, and user reviews.",
+      "Streamlined book issue and return processes with a responsive interface for day-to-day library operations.",
     ],
-    metrics: "60% efficiency gain · Responsive UI",
+    metrics: "Full-stack · MySQL · Responsive UI",
   },
   {
     id: 8,
@@ -117,8 +132,8 @@ export const sweProjects: Project[] = [
     repoUrl: "https://github.com/SnehaSasa/Weather-App.git",
     tech: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
     description: [
-      "Created a real-time weather forecasting app using HTML, CSS, and JavaScript, integrated with OpenWeatherMap API to provide users with accurate weather data, including temperature, humidity, and precipitation chances.",
-      "Increased user engagement by providing timely and precise weather updates, improving the user experience and accessibility of weather data.",
+      "Created a real-time weather forecasting app using HTML, CSS, and JavaScript, integrated with OpenWeatherMap API for temperature, humidity, and precipitation.",
+      "Focused on clear UX for timely weather updates from live API data.",
     ],
     metrics: "Real-time · API integration",
   },

@@ -2,16 +2,15 @@
 
 import { motion } from "framer-motion";
 import { expertiseCategories } from "@/data/content";
-import { Cpu, Code, Database, Globe, Layers, Wrench } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Cpu, Database, Globe, Layers, Wrench, Code } from "lucide-react";
 
 const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  "AI & Generative AI": Cpu,
-  "Python & ML Libraries": Code,
-  "Programming Languages": Code,
-  "Web & Frameworks": Globe,
-  "Databases & Cloud": Database,
-  "CS Fundamentals & Tools": Wrench,
+  "AI, GenAI & Agentic Systems": Layers,
+  "Machine Learning & AI Libraries": Cpu,
+  "Backend & Application Engineering": Globe,
+  "Programming & Databases": Database,
+  "Cloud & DevOps": Code,
+  "Computer Science Foundations": Wrench,
 };
 
 const container = {

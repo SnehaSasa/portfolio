@@ -109,7 +109,7 @@ export function Career() {
                       href="/enterprise-ai-platform"
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-400 hover:text-cyan-400 transition-colors group/link"
                     >
-                      Explore my work on the product
+                      Explore CAWi case study
                       <span className="inline-block transition-transform group-hover/link:translate-x-1">→</span>
                     </Link>
                   </div>
